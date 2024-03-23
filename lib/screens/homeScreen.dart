@@ -111,6 +111,7 @@ class HomeScreen extends StatelessWidget {
             GlassBox(
               theHeight: MediaQuery.of(context).size.height * 0.3,
               theWidth: double.infinity,
+              theColor: Colors.black45,
               theChild: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -124,6 +125,7 @@ class HomeScreen extends StatelessWidget {
                     child: GlassBox(
                       theWidth: MediaQuery.of(context).size.width * 0.8,
                       theHeight: MediaQuery.of(context).size.height * 0.09,
+                      theColor: Colors.black45,
                       theChild: const Center(
                         child: Text(
                           style: TextStyle(
@@ -138,6 +140,7 @@ class HomeScreen extends StatelessWidget {
                   GlassBox(
                     theWidth: MediaQuery.of(context).size.width * 0.8,
                     theHeight: MediaQuery.of(context).size.height * 0.09,
+                    theColor: Colors.black45,
                     theChild: const Center(
                       child: Text(
                         style: TextStyle(

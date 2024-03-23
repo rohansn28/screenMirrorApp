@@ -26,6 +26,7 @@ class _AdvanceOptionState extends State<AdvanceOption> {
         child: Column(
           children: [
             GlassBox(
+              theColor: Colors.black45,
               themargin: EdgeInsets.all(16.0),
               theHeight: MediaQuery.of(context).size.height * 0.25,
               theChild: Column(
@@ -47,6 +48,7 @@ class _AdvanceOptionState extends State<AdvanceOption> {
                       }
                     },
                     child: GlassBox(
+                      theColor: Colors.black45,
                       themargin: const EdgeInsets.symmetric(
                         horizontal: 16.0,
                         vertical: 8.0,
@@ -86,6 +88,7 @@ class _AdvanceOptionState extends State<AdvanceOption> {
                       }
                     },
                     child: GlassBox(
+                      theColor: Colors.black45,
                       themargin: const EdgeInsets.symmetric(
                         horizontal: 16.0,
                         vertical: 8.0,
@@ -125,6 +128,7 @@ class _AdvanceOptionState extends State<AdvanceOption> {
                 Navigator.pushNamed(context, "/progress");
               },
               child: GlassBox(
+                theColor: Colors.black45,
                 theHeight: MediaQuery.of(context).size.height * 0.05,
                 theWidth: MediaQuery.of(context).size.width * 0.8,
                 theChild: const Center(
