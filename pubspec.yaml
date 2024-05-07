@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_custom_tabs: ^2.0.0+1
   simple_circular_progress_bar: ^1.0.2
 
 dev_dependencies:
@@ -20,3 +21,5 @@ flutter:
   uses-material-design: true
   assets:
     - assets\bg.jpg
+    - assets\projector.jpg
+    - assets\mainscreen.png

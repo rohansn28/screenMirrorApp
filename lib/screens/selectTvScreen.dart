@@ -12,20 +12,27 @@ class SelectTvScreen extends StatefulWidget {
 class _SelectTvScreenState extends State<SelectTvScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        foregroundColor: Colors.white,
-        centerTitle: true,
-        title: const Text("Select TV"),
+    return Container(
+      decoration: const BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(20)),
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Colors.purple,
+            Colors.blue,
+            Colors.green,
+          ],
+        ),
       ),
-      body: SafeArea(
-        child: Container(
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/bg.jpg'),
-            ),
-          ),
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          foregroundColor: Colors.white,
+          centerTitle: true,
+          title: const Text("Select TV"),
+        ),
+        body: SafeArea(
           child: ListView.builder(
             itemCount: 15,
             itemBuilder: (context, index) {
@@ -36,6 +43,7 @@ class _SelectTvScreenState extends State<SelectTvScreen> {
                     Navigator.pushNamed(context, "/options");
                   },
                   child: GlassBox(
+                    rad: 10.0,
                     theColor: Colors.black45,
                     theWidth: MediaQuery.of(context).size.width * 0.8,
                     theHeight: MediaQuery.of(context).size.height * 0.09,

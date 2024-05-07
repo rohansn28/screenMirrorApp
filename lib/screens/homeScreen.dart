@@ -1,7 +1,3 @@
-import 'dart:ffi';
-import 'dart:ui';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:screenmirroring_app/widgets/glassbox.dart';
@@ -11,14 +7,20 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: SafeArea(
-      child: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/bg.jpg'),
-          ),
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Colors.purple,
+            Colors.blue,
+            Colors.green,
+          ],
         ),
+      ),
+      child: Scaffold(
+          body: SafeArea(
         child: Column(
           children: [
             Container(
@@ -35,80 +37,18 @@ class HomeScreen extends StatelessWidget {
                 //   ],
                 // ),
               ),
-              child: const Center(
-                child: Text("Image Section"),
+              child: Center(
+                child: Image.asset(
+                  'assets/mainscreen.png',
+                  width: 350,
+                ),
               ),
             ),
-            // Expanded(
-            //   child: Container(
-            //     width: double.maxFinite,
-            //     decoration: BoxDecoration(
-            //       color: Colors.white.withOpacity(0.3),
-            //       borderRadius: BorderRadius.all(Radius.circular(20)),
-            //       border: Border.all(
-            //         width: 1.5,
-            //         color: Colors.white.withOpacity(0.4),
-            //       ),
-            //     ),
-            //     child: Column(
-            //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            //       children: [
-            //         InkWell(
-            //           onTap: () {
-            //             Navigator.pushNamed(context, "/tvscreen");
-            //           },
-            //           child: Container(
-            //             width: MediaQuery.of(context).size.width * 0.9,
-            //             height: MediaQuery.of(context).size.height * 0.1,
-            //             decoration: BoxDecoration(
-            //               color: Colors.white.withOpacity(0.3),
-            //               borderRadius: BorderRadius.all(Radius.circular(20)),
-            //               border: Border.all(
-            //                 width: 1.5,
-            //                 color: Colors.white.withOpacity(0.4),
-            //               ),
-            //             ),
-            //             child: const Center(
-            //               child: Text(
-            //                 style: TextStyle(
-            //                     fontSize: 23,
-            //                     fontWeight: FontWeight.bold,
-            //                     color: Colors.white),
-            //                 'Screen Mirroring',
-            //               ),
-            //             ),
-            //           ),
-            //         ),
-            //         Container(
-            //           width: MediaQuery.of(context).size.width * 0.9,
-            //           height: MediaQuery.of(context).size.height * 0.1,
-            //           decoration: BoxDecoration(
-            //             color: Colors.white.withOpacity(0.3),
-            //             borderRadius: BorderRadius.all(Radius.circular(20)),
-            //             border: Border.all(
-            //               width: 1.5,
-            //               color: Colors.white.withOpacity(0.4),
-            //             ),
-            //           ),
-            //           child: Center(
-            //             child: Text(
-            //               style: TextStyle(
-            //                   fontSize: 23,
-            //                   fontWeight: FontWeight.bold,
-            //                   color: Colors.white),
-            //               'Video Projector',
-            //             ),
-            //           ),
-            //         ),
-            //       ],
-            //     ),
-            //   ),
-
-            // ),
             const Expanded(
               child: SizedBox(),
             ),
             GlassBox(
+              rad: 10.0,
               theHeight: MediaQuery.of(context).size.height * 0.3,
               theWidth: double.infinity,
               theColor: Colors.black45,
@@ -123,6 +63,7 @@ class HomeScreen extends StatelessWidget {
                       Navigator.pushNamed(context, "/tvscreen");
                     },
                     child: GlassBox(
+                      rad: 20.0,
                       theWidth: MediaQuery.of(context).size.width * 0.8,
                       theHeight: MediaQuery.of(context).size.height * 0.09,
                       theColor: Colors.black45,
@@ -137,17 +78,23 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  GlassBox(
-                    theWidth: MediaQuery.of(context).size.width * 0.8,
-                    theHeight: MediaQuery.of(context).size.height * 0.09,
-                    theColor: Colors.black45,
-                    theChild: const Center(
-                      child: Text(
-                        style: TextStyle(
-                            fontSize: 23,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
-                        'Video Projector',
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, "/projector");
+                    },
+                    child: GlassBox(
+                      rad: 20.0,
+                      theWidth: MediaQuery.of(context).size.width * 0.8,
+                      theHeight: MediaQuery.of(context).size.height * 0.09,
+                      theColor: Colors.black45,
+                      theChild: const Center(
+                        child: Text(
+                          style: TextStyle(
+                              fontSize: 23,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
+                          'Video Projector',
+                        ),
                       ),
                     ),
                   )
@@ -156,7 +103,7 @@ class HomeScreen extends StatelessWidget {
             )
           ],
         ),
-      ),
-    ));
+      )),
+    );
   }
 }

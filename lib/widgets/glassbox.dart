@@ -1,3 +1,4 @@
+import 'dart:ffi';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -8,13 +9,15 @@ class GlassBox extends StatelessWidget {
   final theChild;
   final themargin;
   final theColor;
-  const GlassBox({
+  double rad;
+  GlassBox({
     super.key,
     this.theChild,
     this.theHeight,
     this.theWidth,
     this.themargin,
     this.theColor,
+    required this.rad,
   });
 
   @override
@@ -28,7 +31,7 @@ class GlassBox extends StatelessWidget {
           height: theHeight,
           width: theWidth,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(rad),
             color: theColor, //Colors.black45,
           ),
           child: theChild,
